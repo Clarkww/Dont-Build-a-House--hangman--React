@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Dont-Build-a-House--hangman--React/static/css/main.ac31a7d0.css",
+    "main.js": "/Dont-Build-a-House--hangman--React/static/js/main.4dda4006.js",
+    "static/media/house7.png": "/Dont-Build-a-House--hangman--React/static/media/house7.1334013cda4ba9f198a3.png",
+    "static/media/house6.png": "/Dont-Build-a-House--hangman--React/static/media/house6.40278fab98bc9e08d82a.png",
+    "index.html": "/Dont-Build-a-House--hangman--React/index.html",
+    "main.ac31a7d0.css.map": "/Dont-Build-a-House--hangman--React/static/css/main.ac31a7d0.css.map",
+    "main.4dda4006.js.map": "/Dont-Build-a-House--hangman--React/static/js/main.4dda4006.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ac31a7d0.css",
+    "static/js/main.4dda4006.js"
+  ]
+}
