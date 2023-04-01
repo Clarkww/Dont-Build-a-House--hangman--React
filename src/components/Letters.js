@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { useGameState } from '../Gamestate';
 
-export default function Letters({setGuessedLetters, guessedLetters, handleGuessLetter}) {
+export default function Letters({setGuessedLetters, guessedLetters, handleGuessLetter, resetCount}) {
     const [activeStates, setActiveStates] = useState(Array(26).fill(false))
 
     
@@ -20,6 +20,14 @@ export default function Letters({setGuessedLetters, guessedLetters, handleGuessL
         setGuessedLetters([...guessedLetters, letter])
         handleGuessLetter(letter)
     }
+
+    function handleReset() {
+        setActiveStates(Array(26).fill(false))
+    }
+
+    React.useEffect(() => {
+        handleReset()
+    }, [resetCount])
   return (
 
     <div className='letter-area'>

@@ -12,7 +12,12 @@ import Wrongguesses from './components/Wrongguesses'
 
 import Letters from './components/Letters'
 
+import Resetbutton from './components/Resetbutton'
+
+
 import './index.css'
+
+
 
 import { useGameState } from './Gamestate'
 
@@ -25,6 +30,7 @@ function App() {
   const {guessedLetters, setGuessedLetters} = useGameState()
   const [wrongGuessCount, setWrongGuessCount] = useState(0)
   const [selectedWord, setSelectedWord] = useState('')
+  const [resetCount, setResetCount] = useState(0)
 
 
 
@@ -34,6 +40,17 @@ function App() {
     setSelectedWord(wordList[randomIndex])
     setGameStarted(true)
     console.log(wrongGuessCount)
+  }
+
+  function handleResetGame() {
+    console.log('reset')
+    const randomIndex = Math.floor(Math.random() * wordList.length)
+    console.log(wordList[randomIndex])
+    setSelectedWord(wordList[randomIndex])
+    setGameStarted(true)
+    setResetCount(resetCount + 1)
+    setWrongGuessCount(0)
+    setGuessedLetters([])
   }
 
   
@@ -54,20 +71,18 @@ function App() {
 
   // let word = 'HELLO'
 
-  const maxWrongGuesses = 6
-  const isGameOver = wrongGuessCount >= maxWrongGuesses
-  const win = selectedWord.split('').every((letter) => guessedLetters.includes(letter))
 
   return (
     <>
       <Header />
         {!gameStarted ? (  <Playbutton handlePlayButtonClick={handlePlayButtonClick} gameStarted={gameStarted} />
               ) : (    
-        <div className='game-container'>  
-          <Figure wrongGuessCount={wrongGuessCount} />
-          <Wordarea selectedWord={selectedWord} guessedLetters={guessedLetters}  />
-          <Wrongguesses wrongGuessCount={wrongGuessCount} />
-          <Letters setGuessedLetters={setGuessedLetters} guessedLetters={guessedLetters} handleGuessLetter={handleGuessLetter} />
+          <div className='game-container'>  
+          <Figure wrongGuessCount={wrongGuessCount} resetCount={resetCount} />
+          <Wordarea selectedWord={selectedWord} guessedLetters={guessedLetters} resetCount={resetCount}  />
+          <Wrongguesses wrongGuessCount={wrongGuessCount} selectedWord={selectedWord} resetCount={resetCount}/>
+          <Resetbutton onClick={handleResetGame}/> 
+          <Letters setGuessedLetters={setGuessedLetters} guessedLetters={guessedLetters} handleGuessLetter={handleGuessLetter} resetCount={resetCount}/>
         </div>
         )}  
         
