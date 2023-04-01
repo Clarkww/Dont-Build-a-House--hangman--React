@@ -1,13 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* padding: 20%; */
+  text-align: center;
+  background: darkcyan;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Delicious Handrawn', cursive;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header {
+  font-family: 'Delicious Handrawn', cursive;
+  font-size: 25px;
+  /* color: white; */
+  margin: 0 20px;
 }
+
+header p {
+  line-height: 0.5;
+}
+
+h1 {
+  line-height: 0.6;
+}
+
+.play-btn {
+  font-size: 120px;
+}
+
+.game-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  align-items: center;
+}
+
+.hang-house {
+  height: 400px;
+  width: 400px;
+  flex-basis: 60%;
+  /* zoom in on image */
+  transform: scale(1.5);
+  /* remove white */
+  /* filter colour white away */
+  /* filter:grayscale(100%);  */
+  filter: brightness(20%);
+  padding: 0 0 0 50px;
+  align-self: center;
+}
+
+.word-area {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-basis: 40%;
+  /* width: 400px; */
+  margin: 20px auto;
+}
+.wrong-guess {
+  padding: 5px;
+  margin: 10px 1px;
+  /* border: black solid 1px; */
+  flex-basis: 100%;
+  font-size: 23px;
+
+}
+
+.guessed {
+  padding: 5px;
+  margin: 10px 1px;
+  font-size: 60px;
+  /* border: black solid 1px; */
+}
+
+.letter-area {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: 20px auto;
+}
+
+.letter {
+  padding: 5px;
+  margin: 10px;
+  border: black solid 1px;
+  height: 40px;
+  width: 40px;
+  width: auto;
+  border-radius: 5px;
+  font-size: 36px;
+}
+
+.active {
+  /* hide element but keep its space */
+  visibility: hidden;
+}
+
+/* media query for phone screen sizes */
+
+@media screen and (max-width: 600px) {
+  header  h1{
+    line-height: 1.3;
+    font-size: 40px;
+  }
+
+  header p {
+    line-height: 0.8;
+    font-size: 20px;
+  }
+  
+  .house-div {
+    /* align-self: center; */
+    justify-self: center;
+  }
+  .hang-house {
+    height: 200px;
+    width: 200px;
+    transform: scale(1.5);
+
+    filter: brightness(20%);
+    padding: 0 20%;
+
+
+  }
+
+  .house-div{
+    flex-basis: 100%;
+  }
+
+
+  .word-area {
+    flex-basis: 100%;
+  }
+
+  .guessed {
+    font-size: 25px;
+    padding: 0;
+    gap: 3px;
+    /* width: 100%; */
+  }
+
+  .letter-area{
+    width: 100%;
+    
+    /* font-size: 20px; */
+  }
+
+  .letter {
+    font-size: 18px;
+    height: auto;
+  }
+  
+}
+
+
